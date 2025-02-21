@@ -1,4 +1,3 @@
-import * as sdk from "@basaldev/blocks-backend-sdk";
 import { defaultAdapter, UserAppConfig, createNodeblocksUserApp } from "@basaldev/blocks-user-service";
 type CreateUserDefaultAdapterDependencies = Parameters<typeof defaultAdapter.createUserDefaultAdapter>[1];
 
