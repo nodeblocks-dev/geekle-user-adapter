@@ -1,4 +1,5 @@
 import { defaultAdapter, UserAppConfig, createNodeblocksUserApp } from "@basaldev/blocks-user-service";
+import * as sdk from "@basaldev/blocks-backend-sdk";
 type CreateUserDefaultAdapterDependencies = Parameters<typeof defaultAdapter.createUserDefaultAdapter>[1];
 
 export function beforeCreateAdapter(
@@ -6,7 +7,8 @@ export function beforeCreateAdapter(
   currentDependencies: CreateUserDefaultAdapterDependencies): [defaultAdapter.UserDefaultAdapterOptions, CreateUserDefaultAdapterDependencies] {
 
   const updatedOptions: defaultAdapter.UserDefaultAdapterOptions = {
-    ...currentOptions
+    ...currentOptions,
+    authenticate: sdk.security.defaultCookieAuth,
   };
 
   const updatedDependencies: CreateUserDefaultAdapterDependencies = {
