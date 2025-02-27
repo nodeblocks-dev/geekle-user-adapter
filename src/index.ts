@@ -8,7 +8,7 @@ export function beforeCreateAdapter(
 
   const updatedOptions: defaultAdapter.UserDefaultAdapterOptions = {
     ...currentOptions,
-    authenticate: sdk.security.defaultCookieAuth,
+    authenticate: sdk.security.defaultBearerAuth,
   };
 
   const updatedDependencies: CreateUserDefaultAdapterDependencies = {
