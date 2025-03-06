@@ -7,6 +7,7 @@ import { setValidators } from "./validators";
 import { catalogDefaultAdapterRestSdk } from "./helpers";
 import { AttributeItems, CategoryResponse } from "@basaldev/blocks-default-adapter-api";
 import { setEmailHandlers } from "./emails";
+import { inviteUserTemplate } from "./emails/templates/inviteUser";
 
 type CreateUserDefaultAdapterDependencies = Parameters<typeof defaultAdapter.createUserDefaultAdapter>[1];
 
@@ -94,6 +95,14 @@ export function beforeCreateAdapter(
     },
     authenticate: sdk.security.defaultBearerAuth,
     emailConfig: {
+      inviteUser: {
+        template: {
+          bodyTemplate: inviteUserTemplate.vendor.bodyTemplate,
+          subject: inviteUserTemplate.vendor.subject,
+          urlTemplate: inviteUserTemplate.vendor.urlTemplate
+        },
+        enabled: inviteUserTemplate.enabled
+      },
       changePassword: {
         adminTemplate: {
           bodyTemplate: changePasswordTemplate.admin.bodyTemplate,

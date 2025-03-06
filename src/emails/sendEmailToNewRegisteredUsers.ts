@@ -2,7 +2,6 @@ import { defaultAdapter } from "@basaldev/blocks-user-service";
 import * as sdk from '@basaldev/blocks-backend-sdk';
 import { Logger } from "@basaldev/blocks-backend-sdk";
 import { getEnvString } from "../helpers";
-import { mailService } from ".";
 import { newUserTemplate } from "./templates/newUser";
 import { UpdatedUser } from "../types";
 
@@ -49,7 +48,7 @@ export function sendEmailToNewRegisteredUsers(adapter: defaultAdapter.UserDefaul
           to: to as unknown as string,
         };
         logger.info(mailData);
-        const didSend = await mailService().sendMail(mailData);
+        const didSend = await adapter.dependencies.mailService.sendMail(mailData);
         if (!didSend) {
           logger.error({
             message: 'Failed to send email',
