@@ -2,5 +2,38 @@
   "schema": "1.0.0",
   "type": "adapter",
   "version": "1.0.0",
-  "configs": []
+  "configs": [ 
+    {
+      "displayName": "Supply site URL",
+      "description": "Supply site URL for the organization",
+      "type": "string",
+      "name": "ADAPTER_CUSTOM_SUPPLY_SITE_URL",
+      "required": true,
+      "defaultValue": ""
+    },
+    {
+      "displayName": "Admin site URL",
+      "description": "Admin site URL for the organization",
+      "type": "string",
+      "name": "ADAPTER_CUSTOM_ADMIN_SITE_URL",
+      "required": true,
+      "defaultValue": ""
+    },
+    {
+      "displayName": "Demand site URL",
+      "description": "Demand site URL for the organization",
+      "type": "string",
+      "name": "ADAPTER_CUSTOM_DEMAND_SITE_URL",
+      "required": true,
+      "defaultValue": ""
+    },
+    {
+      "displayName": "Catalog site URL",
+      "description": "Catalog site URL for the organization",
+      "type": "string",
+      "name": "ADAPTER_CUSTOM_CATALOG_SITE_URL",
+      "required": true,
+      "defaultValue": ""
+    }
+]
 }
