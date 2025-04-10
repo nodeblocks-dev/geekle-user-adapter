@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc",
+    "typecheck": "npx tsc --noEmit",
     "start": "nbc adapter start",
     "dev": "nbc adapter dev -i dist -e tsc"
   },
